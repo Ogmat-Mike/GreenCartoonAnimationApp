@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:green_cartoon_animation_app/components/my_drawer_tile.dart';
+import 'package:green_cartoon_animation_app/pages/about_us_page.dart';
+import 'package:green_cartoon_animation_app/pages/animation_page.dart';
+import 'package:green_cartoon_animation_app/pages/project_page.dart';
 import 'package:green_cartoon_animation_app/pages/settings_page.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -9,6 +12,7 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: Theme.of(context).colorScheme.surface,
+      // backgroundColor: Color(0xff079b50),
       child: Center(
         child: Column(
           children: [
@@ -25,7 +29,7 @@ class MyDrawer extends StatelessWidget {
                 'assets/gc_logo.png',
                 width: 60,
                 height: 60,
-                // fit: Boxf,
+                // fit: Box,
                 
                 ),
             ),
@@ -41,16 +45,41 @@ class MyDrawer extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(25.0),
               child: Divider(
-                color: Theme.of(context).colorScheme.secondary,
+                color: Theme.of(context).colorScheme.inverseSurface,
               ),
             ),
         
             // home list tile
             MyDrawerTile(
-              text: "H O M E", 
+              text: "H O M E" , 
               icon: Icons.home, 
               onTap: () => Navigator.pop(context),
-              ),
+            ),
+
+            const SizedBox(height: 10,),
+
+            // Animations list tile
+            MyDrawerTile(
+              text: "A N I M A T I O N S", 
+              icon: Icons.smart_display_outlined, 
+              onTap: () { Navigator.pop(context);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => AnimationPage()));
+              }
+
+            ),
+
+            const SizedBox(height: 10,),
+
+            // Projects list tile
+            MyDrawerTile(
+              text: "P R O J E C T S", 
+              icon: Icons.work_outline_outlined, 
+              onTap: () { Navigator.pop(context);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ProjectPage()));
+              }
+            ),
+
+            const SizedBox(height: 10,),
         
             // settings list tile
             MyDrawerTile(
@@ -68,9 +97,13 @@ class MyDrawer extends StatelessWidget {
         
             // logout
             MyDrawerTile(
-              text: "L O G O U T", 
+              text: "About Us", 
               icon: Icons.logout, 
-              onTap: (){}
+              onTap: (){
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => AboutUsPage()
+                ));
+              }
             ),
 
             const SizedBox(height: 25,),

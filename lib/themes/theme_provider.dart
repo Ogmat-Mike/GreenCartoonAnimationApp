@@ -3,6 +3,7 @@ import 'package:green_cartoon_animation_app/themes/dark_mode.dart';
 import 'package:green_cartoon_animation_app/themes/light_mode.dart';
 
 class ThemeProvider with ChangeNotifier {
+  
   ThemeData _themeData = lightMode;
 
   ThemeData get themeData => _themeData;

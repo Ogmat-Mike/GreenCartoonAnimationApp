@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:green_cartoon_animation_app/components/appbar_image.dart';
-import 'package:green_cartoon_animation_app/components/carousel_videos.dart';
-// import 'package:green_cartoon_animation_app/components/carousel_videos.dart';
+import 'package:green_cartoon_animation_app/components/my_custom_scrollview.dart';
 import 'package:green_cartoon_animation_app/components/my_drawer.dart';
-import 'package:green_cartoon_animation_app/components/my_sliver_app_bar.dart';
-// import 'package:green_cartoon_animation_app/components/my_youtube_carousel.dart';
-// import 'package:green_cartoon_animation_app/pages/youtube_carousel_page.dart';
+import 'package:green_cartoon_animation_app/pages/animation_page.dart';
+import 'package:green_cartoon_animation_app/pages/project_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,49 +12,57 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+    int _selectedIndex = 0;
+
+    final List<Widget> _children = [
+      MyCustomScrollView(),
+      AnimationPage(),
+      ProjectPage()
+    ];
+
+    void _onItemTapped(int index) {
+    
+    setState(() {
+      _selectedIndex = index;
+    });
+    
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: _children[_selectedIndex],
       drawer: MyDrawer(),
-      body: NestedScrollView(
-        headerSliverBuilder: (context, innerBoxIsScrolled) => [
-          MySliverAppBar(
-            title: Container(
-              height: 80,
-              padding: const EdgeInsets.all(25),
-              margin: const EdgeInsets.symmetric(horizontal: 5.0),
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.inverseSurface,
-                borderRadius: BorderRadius.circular(8)
-              ),
-              child: Center(
-                child: Text(
-                  "Green Cartoon Animations",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold
-                    
-                  ),
-                  ),
-              ),
-                ),
-            child: AppbarImage()
-        
-            )
-        ],
-
-        body: MyCarouselVideos(),
+      bottomNavigationBar: BottomNavigationBar(
+      items: const <BottomNavigationBarItem> [
+    
+        // HOME
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: "Home",
         ),
-        // bottomNavigationBar: BottomNavigationBar(
-        //   items: [
-        //     BottomNavigationBarItem(
-        //       icon: IconButton(
-        //         onPressed: (){}, 
-        //         icon: Icon(Icons.home)
-        //         )
-        //         )
-        //         ]),
+    
+        // ANIMATIONS
+        BottomNavigationBarItem(
+          icon: Icon(Icons.smart_display_outlined),
+          label: "Animations",
+        ),
+    
+        // PROJECTS
+        BottomNavigationBarItem(
+          icon: Icon(Icons.work_outline_outlined),
+          label: "Projects"),
+    
+      ],
+      currentIndex: _selectedIndex,
+      selectedItemColor: Colors.green,
+      onTap: _onItemTapped,
+      elevation: 3,
+      )
+  ,
+
     );
   }
 }
+

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:green_cartoon_animation_app/components/herolayout_trainees.dart';
 import 'package:green_cartoon_animation_app/components/my_blockquote_wrapper.dart';
 import 'package:green_cartoon_animation_app/components/my_sliver_text_widget.dart';
 import 'package:green_cartoon_animation_app/components/my_sliver_to_box_headings.dart';
@@ -261,7 +262,9 @@ void initState() {
                   ),
          ),
 
-        const MyBlockQuoteWrapper(textInQuote: "GALLERY")
+        const MyBlockQuoteWrapper(textInQuote: "GALLERY"),
+        
+       const HerolayoutTrainees(),
    ],
    ),
   );

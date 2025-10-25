@@ -109,7 +109,7 @@ class MySliverAppBar extends StatelessWidget {
                                 children: [
                                   // Mission statement
                                   Container(
-                                    height: 150,
+                                    height: 185,
                                     margin: const EdgeInsets.only(right: 18),
                                     padding: const EdgeInsets.only(right: 15),
                                     decoration: const BoxDecoration(

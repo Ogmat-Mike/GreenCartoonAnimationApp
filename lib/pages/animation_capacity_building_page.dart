@@ -60,7 +60,7 @@ class _AnimationCapacityBuildingPageState extends State<AnimationCapacityBuildin
       'university': 'Obafemi Awolowo University',
       'rating': 4,
       'text': 'Very insightful experience, helped me grow in design thinking.',
-      'image': 'assets/Team/team-members/ninan.jpg',
+      'image': 'assets/gc_logo_1024.png',
     },
     {
       'name': 'Oyedeji Precious.',

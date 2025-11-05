@@ -32,15 +32,21 @@ class MyBlockQuoteWrapper extends StatelessWidget {
              mainAxisSize: MainAxisSize.min,
              children: [
                // the blockquote
-               const Padding(
-                 padding: EdgeInsets.only(right: 10.0),
-                 child: Icon(Icons.format_align_left_outlined),
+                Padding(
+                 padding:  EdgeInsets.only(right: 10.0),
+                 child: Icon(
+                  Icons.format_align_left_outlined,
+                  color: Colors.black),
                ),
            
                // goals text
                 Padding(
                   padding: EdgeInsets.only(right: 10.0),
-                  child: Text(textInQuote),
+                  child: Text(
+                    textInQuote,
+                    style: TextStyle(
+                      color: Colors.black
+                    ),),
                 ),
              ],
            ),

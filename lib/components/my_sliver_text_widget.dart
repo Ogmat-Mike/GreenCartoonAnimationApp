@@ -14,10 +14,11 @@ class MySliverTextWidget extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.all(15),
         child: DefaultTextStyle(
-          style: const TextStyle(
-            color: Colors.black,
+          style:  TextStyle(
+            color: Theme.of(context).colorScheme.inverseSurface,
             fontFamily: "Quicksand-Medium",
             fontSize: 15),
+            
             
 
           child: textString)

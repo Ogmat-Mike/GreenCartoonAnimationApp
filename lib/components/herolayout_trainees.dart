@@ -24,8 +24,9 @@ class HerolayoutTrainees extends StatelessWidget {
                 final description = data.first;
                 final images = data.skip(1).toList();
 
-                return Padding(
+                return Container(
                   padding: const EdgeInsets.symmetric(vertical: 12.0),
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -33,19 +34,20 @@ class HerolayoutTrainees extends StatelessWidget {
                       Text(
                         traineeName,
                         style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-
+                  
                       // Description
                       Text(
                         description,
-                        style: const TextStyle(color: Colors.grey),
+                        style: const TextStyle(
+                          color: Colors.grey),
                       ),
-
+                  
                       const SizedBox(height: 8),
-
+                  
                       // Horizontal Scrollable Image Row
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
@@ -53,13 +55,13 @@ class HerolayoutTrainees extends StatelessWidget {
                           children: images.map((imgPath) {
                             return Container(
                               margin:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
+                                  const EdgeInsets.symmetric(horizontal: 5.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(12),
                                 child: Image.asset(
                                   imgPath,
-                                  height: 150,
-                                  width: 150,
+                                  height: 250,
+                                  width: 250,
                                   fit: BoxFit.cover,
                                 ),
                               ),

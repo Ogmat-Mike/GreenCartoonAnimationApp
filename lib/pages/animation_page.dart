@@ -125,10 +125,6 @@ class _AnimationPageState extends State<AnimationPage> {
     final allLanguages = _languages.allLanguages;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("GREEN CARTOON"),
-        backgroundColor: Colors.green,
-      ),
       body: Column(
         children: [
           // ===== Language Buttons =====

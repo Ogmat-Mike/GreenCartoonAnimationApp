@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:green_cartoon_animation_app/components/herolayout_trainees.dart';
+import 'package:green_cartoon_animation_app/components/my_appbar_actions.dart';
 import 'package:green_cartoon_animation_app/components/my_blockquote_wrapper.dart';
 import 'package:green_cartoon_animation_app/components/my_sliver_text_widget.dart';
 import 'package:green_cartoon_animation_app/components/my_sliver_to_box_headings.dart';
@@ -34,27 +35,41 @@ class _AnimationCapacityBuildingPageState extends State<AnimationCapacityBuildin
 
   final List<Map<String, dynamic>> testimonials = [
     {
-      'name': 'Adelabi Daniel Oluwadamilare',
-      'university': 'Clinton Awosika University',
+      'name': 'Fajobi Daniel Oluwaseun',
+      'university': 'Obafemi Awolowo University',
       'rating': 5,
-      'text': 'A strong opportunity so far. Helped me improve tech standard.',
-      'image': 'assets/Team/team-members/ninan.jpg',
+      'text': ' The 3D modeling and animation workshop was an incredible experience that gave me hands-on exposure to the world of 3D art and animation. From learning how to create detailed models and textures to understanding lighting, rigging, and rendering, the program walked me through the entire creative process using Blender. The instructors were knowledgeable and approachable, making even complex concepts easy to grasp. I loved how practical the sessions were.',
+      'image': 'assets/Team/trainees/fajobi-daniel/hair.jpeg',
     },
     {
-      'name': 'Jason Prince',
-      'university': 'Clinton Awosika University',
+      'name': 'Jesus Praise',
+      'university': 'Obafemi Awolowo University',
       'rating': 5,
-      'text':
-          'It has been a great opportunity for me to explore the world of 3D beyond the basics.',
-      'image': 'assets/Team/team-members/ninan.jpg',
+      'text': 'It has been a great opportunity for me to explore the world of 3D beyond the shallow surface I used to know. It has been super positively helpful, so far so good.',
+      'image': 'assets/Team/trainees/jesus-praise/airplane.png',
     },
     {
-      'name': 'Blessing O.',
-      'university': 'Clinton Awosika University',
+      'name': 'Baidoo Blessed.',
+      'university': 'Obafemi Awolowo University',
+      'rating': 4,
+      'text': 'It was a wonderful experience meeting new people with interest in 3d animation and learning from professionals. It has helped in Expanding my knowledge of the possibilities of 3d animation.',
+      'image': 'assets/Team/trainees/baidoo-blessed/wrist-watch.jpg',
+    },
+    {
+      'name': 'Afolabi Daniel OluwaDunsin.',
+      'university': 'Obafemi Awolowo University',
       'rating': 4,
       'text': 'Very insightful experience, helped me grow in design thinking.',
       'image': 'assets/Team/team-members/ninan.jpg',
     },
+    {
+      'name': 'Oyedeji Precious.',
+      'university': 'Obafemi Awolowo University',
+      'rating': 4,
+      'text': ' Engaging  and Interactive Experience, Educative and Insightful. The Programme has encouraged me to continue in 3d industry as a main career',
+      'image': 'assets/Team/trainees/oyedeji-precious/room-furniture.png',
+    },
+        
   ];
 
   void _resumeScrolling() {
@@ -94,6 +109,60 @@ void initState() {
   Widget build(BuildContext context) {
   
     return Scaffold(
+      appBar: MyAppBarActions(
+        iconImage: Container(
+          margin: const EdgeInsets.only(top: 4, right: 8),
+          child: Image.asset(
+            "assets/alum-node-icon.png",
+            height: 24,
+            width: 24,
+          ),
+        ), 
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Organization
+            const Text(
+              "Animation Capacity Building",
+              style: TextStyle(
+                fontFamily: "Quicksand-SemiBold",
+                fontSize: 16,
+                color: Color(0xff079b50)
+              )
+              ),
+
+              // sized box
+
+              const SizedBox(height: 5,),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Row(
+                children: const [
+                  Text(
+                    "TETFUND",
+                    style: TextStyle(
+                      color: Color(0xff606060),
+                      fontFamily: "Quicksand",
+                      fontSize: 14
+                    ),
+                    ),
+
+                    // year
+                  Text(
+                    " • 2020",
+                    style: TextStyle(
+                      color: Color(0xff606060),
+                      fontFamily: "Quicksand",
+                      fontSize: 14
+                    ),
+                    )
+                ],
+              ),
+            )
+          ],
+        )
+        ),
+
       body: CustomScrollView(
         slivers: [
           ProjectPageLayout(
@@ -228,10 +297,14 @@ void initState() {
                                                 Text(
                                                   t['university'],
                                                   style:
-                                                      const TextStyle(color: Colors.grey, fontSize: 13),
-                                                  textAlign: TextAlign.center,
+                                                      const TextStyle(
+                                                        color: Colors.grey, 
+                                                        fontSize: 14,
+                                                        fontFamily: "Quicksand-SemiBold"
+                                                        ),
+                                                  textAlign: TextAlign.center, 
                                                 ),
-                                                const SizedBox(height: 8),
+                                                const SizedBox(height: 10),
                                                 Row(
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   children: List.generate(
@@ -245,11 +318,15 @@ void initState() {
                                                     ),
                                                   ),
                                                 ),
-                                                const SizedBox(height: 8),
+                                                const SizedBox(height: 10),
                                                 Text(
                                                   t['text'],
-                                                  style: const TextStyle(fontSize: 13),
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                    fontFamily: "Quicksand-Regular"),
                                                   textAlign: TextAlign.center,
+                                                  overflow: TextOverflow.ellipsis,
+                                                  maxLines: 3,
                                                 ),
                                               ],
                                             ),

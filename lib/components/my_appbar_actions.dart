@@ -1,29 +1,41 @@
 import 'package:flutter/material.dart';
 
-class MyAppBarActions extends StatelessWidget {
+class MyAppBarActions extends StatelessWidget implements PreferredSizeWidget {
+  final Widget iconImage;
+  final Widget title;
+
   const MyAppBarActions({
     super.key,
+    required this.iconImage,
+    required this.title,
+
   });
+  
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: Row(
+    return AppBar(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      title: Row(
         children: [
-          Image.asset(
-            "assets/gc_logo.png",
-            height: 50,
-            width: 50,),
-            const SizedBox(width: 10,),
-          Text(
-            "Green Cartoon",
-            style: TextStyle(
-              color: Color.fromARGB(235, 30, 240, 135),
-              fontSize: 25,
-            ),
+          // icon image
+          iconImage,
+
+          // space in between
+          const SizedBox(width: 5,),
+
+          // widget for the title.
+          title,
+
+          const SizedBox(width: 10,),
+          ],
           ),
-          ],),
     );
   }
+  
+  
 }

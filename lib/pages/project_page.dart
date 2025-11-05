@@ -14,9 +14,6 @@ class ProjectPage extends StatelessWidget {
   final double _height = MediaQuery.sizeOf(context).height;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Green"),
-      ),
       body: CustomScrollView(
         slivers: [
           const MySliverToBoxHeadings(
@@ -25,19 +22,16 @@ class ProjectPage extends StatelessWidget {
           
           // image
           SliverToBoxAdapter(
-                child: GestureDetector(
-                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => GcaPage())),
-                  child: Container(
-                    height: _height*0.4,
-                    margin: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage("assets/ijapa-smile-landscape-T1rLCFID.jpeg" ),
-                        ),
+                child: Container(
+                  height: _height*0.4,
+                  margin: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage("assets/ijapa-smile-landscape-T1rLCFID.jpeg" ),
                       ),
-                  ),
+                    ),
                 ),
           ),
 
@@ -50,35 +44,59 @@ class ProjectPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text("Green Cartoon Animations",
-                              style: TextStyle(fontSize: 28,
+                              style: TextStyle(fontSize: 25,
                               ),
                       ),
                   const Text("| 2020",
-                      style: TextStyle(fontSize: 28),),
+                      style: TextStyle(fontSize: 25),),
 
                   // Tetfund logo
                    Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.symmetric(vertical: 5),
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle
-                        ),
-                        child: Image.asset("assets/tetfund-icon.png",
-                        fit: BoxFit.contain,
-                        ),
-                      ),
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                     children: [
+                       Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 5),
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle
+                            ),
+                            child: Image.asset("assets/tetfund-icon.png",
+                            fit: BoxFit.contain,
+                            ),
+                          ),
+                       
+                          // Tetfund text
+                          Text("TETFUND",
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.primary,
+                              fontSize: 16
+                          ),),
+                        ],
+                                         ),
 
-                      // Tetfund text
-                      Text("TETFUND",
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
-                          fontSize: 16
-                      ),),
-                    ],
-                  ),
+                        // visit
+                        Container(
+                          margin: const EdgeInsets.only(right: 20),
+                          padding: const EdgeInsets.only(bottom: 5),
+                          child: ElevatedButton.icon(
+                            label: Text(
+                              "visit",
+                              style: TextStyle(
+                                color: Colors.green,
+                                decoration: TextDecoration.underline
+                              ),
+                            ),
+                            icon: Icon(
+                              Icons.open_in_new,
+                              color: Colors.green,),
+                            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => GcaPage(),)),
+                          ),
+                        )
+                     ],
+                   ),
 
                   // Tetfund's mission.
                   const Text("We aim to captivate the younger minds into legendary folktales, learning their history before reaching oblivion; we envision a means of inculcating standard morals and wisdom to...",
@@ -88,54 +106,75 @@ class ProjectPage extends StatelessWidget {
                     ),),
 
                     // acb members image.
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => AnimationCapacityBuildingPage()));
-                      },
-                      child: Container(
-                        height: _height*0.4,
-                        margin: EdgeInsets.only(top: 30, bottom: 10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: const DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("assets/Team/team-members/acb-members.jpg"),
-                            ),
+                    Container(
+                      height: _height*0.4,
+                      margin: EdgeInsets.only(top: 30, bottom: 10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/Team/team-members/acb-members.jpg"),
                           ),
-                      ),
+                        ),
                     ),
 
                     // Animation Capacity Building 
                   const Text("Animation Capacity",
-                              style: TextStyle(fontSize: 28,
+                              style: TextStyle(fontSize: 25,
                               ),
                       ),
                   const Text("Building | 2024",
-                      style: TextStyle(fontSize: 28),),
+                      style: TextStyle(fontSize: 25),),
 
                   // AlumNode
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        margin: const EdgeInsets.symmetric(vertical: 5),
-                        height: 37,
-                        width: 37,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle
-                        ),
-                        child: Image.asset("assets/alum-node-icon.png",
-                        fit: BoxFit.contain,
-                        ),
+                      Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.symmetric(vertical: 5),
+                            height: 37,
+                            width: 37,
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle
+                            ),
+                            child: Image.asset(
+                              "assets/alum-node-icon.png",
+                              width: 8,
+                              height: 8,
+                            fit: BoxFit.contain,
+                            ),
+                          ),
+                      
+                          const SizedBox(width: 10,),
+                      
+                          // Tetfund text
+                          Text("AlumNode",
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.primary,
+                              fontSize: 18
+                          ),),
+                        ],
                       ),
 
-                      const SizedBox(width: 10,),
-
-                      // Tetfund text
-                      Text("AlumNode",
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
-                          fontSize: 18
-                      ),),
+                      Container(
+                          margin: const EdgeInsets.only(right: 20),
+                          padding: const EdgeInsets.only(bottom: 5),
+                          child: ElevatedButton.icon(
+                            label: Text(
+                              "visit",
+                              style: TextStyle(
+                                color: Colors.green,
+                                decoration: TextDecoration.underline
+                              ),
+                            ),
+                            icon: Icon(
+                              Icons.open_in_new,
+                              color: Colors.green,),
+                            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AnimationCapacityBuildingPage(),)),
+                          ),
+                        )                      
                     ],
                   ),
 

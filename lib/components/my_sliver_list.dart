@@ -198,13 +198,15 @@ class MySliverList extends StatelessWidget {
                         "greencartoonanimations@gmail.com",
                         style: TextStyle(
                           fontFamily: "Quicksand-Regular",
+                          fontSize: 14
                         ),
                         ),
                       subtitle: Text(
                         "EMAIL ADDRESS",
                         style: TextStyle(
                           fontFamily: "Quicksand-Regular",
-                          fontWeight: FontWeight.w600
+                          fontWeight: FontWeight.w600,
+                          fontSize: 12
                         ),),
                     ),
                   ),
@@ -221,6 +223,7 @@ class MySliverList extends StatelessWidget {
                         "+234 803 403 3734",
                         style: TextStyle(
                           fontFamily: "Quicksand-Regular",
+                          fontSize: 12
                         ),
                         ),
                       subtitle: Text(
@@ -242,26 +245,26 @@ class MySliverList extends StatelessWidget {
                           "© ",
                           style: TextStyle(
                             fontFamily: "Quicksand-Light",
-                            fontSize: 14
+                            fontSize: 13
                           ),
                         ),
                         Text(
                           "2025 ",
                           style: TextStyle(
                             fontFamily: "Quicksand-Light",
-                            fontSize: 14
+                            fontSize: 13
                           ),),
                         Text(
                           "Green Cartoon Animations",
                           style: TextStyle(
                             fontFamily: "Quicksand-Light",
-                            fontSize: 14
+                            fontSize: 13
                           ),),
                         Text(
                           " All Rights Reserved",
                           style: TextStyle(
                             fontFamily: "Quicksand-Light",
-                            fontSize: 14
+                            fontSize: 13
                           ),)
                       ],
                     ),

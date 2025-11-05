@@ -1,6 +1,6 @@
 class TraineesResources {
   final Map<String, List<String>> _allTraineeData = {
-    "baidoo" : [
+    "Baidoo Blessed" : [
                 "3D Modeller | Animation | Sculpting",
                 "assets/Team/trainees/baidoo-blessed/coke-bottles.png",
                 "assets/Team/trainees/baidoo-blessed/headset-2.png",
@@ -14,7 +14,7 @@ class TraineesResources {
 
               ],
 
-    "fajobi" : [
+    "Fajobi Daniel Oluwaseun" : [
                 "Environment | Animation | Hard-Surface Modelling.",
                 "assets/Team/trainees/fajobi-daniel/basket-balls.jpeg",
                 "assets/Team/trainees/fajobi-daniel/baskets.jpeg",
@@ -25,7 +25,7 @@ class TraineesResources {
                 "assets/Team/trainees/fajobi-daniel/lawn-tennis-ball.jpeg",
               ],
     
-    "jPraise" : [
+    "Jesus Praise" : [
                 "Modelling | Animation | VFX",
                 "assets/Team/trainees/jesus-praise/airplane-lift-off.png",
                 "assets/Team/trainees/jesus-praise/airplane.png",
@@ -41,7 +41,7 @@ class TraineesResources {
                 "assets/Team/trainees/jesus-praise/wizard-room.jpg",
               ],
 
-    "Precious" :  [
+    " Oyedeji Precious" :  [
                     "Animation | VFX",
                     "assets/Team/trainees/oyedeji-precious/room-furniture.png"
                   ] 

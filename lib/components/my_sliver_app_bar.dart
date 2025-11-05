@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:green_cartoon_animation_app/components/my_appbar_actions.dart';
 
 class MySliverAppBar extends StatelessWidget {
   final Widget child;
@@ -23,11 +22,12 @@ class MySliverAppBar extends StatelessWidget {
         : height * 0.65;
 
     return SliverAppBar(
+      leading: const SizedBox.shrink(),
       automaticallyImplyLeading: true,
       expandedHeight: expandedHeight,
       floating: false,
-      pinned: true,
-      title: MyAppBarActions(),
+      pinned: false,
+      // title: MyAppBarActions(),
       flexibleSpace: FlexibleSpaceBar(
         collapseMode: CollapseMode.parallax,
         stretchModes: const [

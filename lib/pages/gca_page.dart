@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:green_cartoon_animation_app/components/my_appbar_actions.dart';
 import 'package:green_cartoon_animation_app/components/my_sliver_text_widget.dart';
 import 'package:green_cartoon_animation_app/components/project_page_layout.dart';
 import 'package:green_cartoon_animation_app/components/tetfund_and_alumnode_row_layout.dart';
@@ -94,6 +95,55 @@ class _GcaPageState extends State<GcaPage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      appBar: MyAppBarActions(
+        iconImage: Container(
+          margin: const EdgeInsets.only(top: 4, right: 8),
+          padding: const EdgeInsets.only(bottom: 15),
+          child: Image.asset(
+            "assets/tetfund-icon.png",
+            width: 26.3,
+            height: 24,
+          ),
+        ), 
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Green Cartoon Animations",
+              style: TextStyle(
+                fontFamily: "Quicksand-SemiBold",
+                fontSize: 16,
+                color: Color(0xff079b50)
+              )              ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Row(
+                children: const [
+                  Text(
+                    "TETFUND ",
+                    style: TextStyle(
+                      color: Color(0xff606060),
+                      fontFamily: "Quicksand",
+                      fontSize: 14
+                    ),
+                    ),
+
+                    // year
+                  Text(
+                    " • 2020",
+                    style: TextStyle(
+                      color: Color(0xff606060),
+                      fontFamily: "Quicksand",
+                      fontSize: 14
+                    ),
+                    )
+                ],
+              ),
+            )
+          ],
+        )),
+
+        
       body: CustomScrollView(
         slivers: [
           // ======= HERO IMAGE SECTION =======
@@ -119,11 +169,16 @@ class _GcaPageState extends State<GcaPage> {
             },
 
             ),
-          const SliverToBoxAdapter(child: SizedBox(height: 40)),
+          const SliverToBoxAdapter(child: SizedBox(height: 30)),
           const MyBlockQuoteWrapper(textInQuote: "GOAL"),
 
-          const MySliverTextWidget(
-            textString: Text("We aim to captivate the younger minds into legendary folktales, learning their history before reaching oblivion; we envision a means of inculcating standard morals and wisdom to relate with one another in love and unity.",)),
+           MySliverTextWidget(
+            textString: Text("We aim to captivate the younger minds into legendary folktales, learning their history before reaching oblivion; we envision a means of inculcating standard morals and wisdom to relate with one another in love and unity.",
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.inverseSurface
+            ),
+            ),
+            ),
 
           const SliverToBoxAdapter(child: SizedBox(height: 20)),
 

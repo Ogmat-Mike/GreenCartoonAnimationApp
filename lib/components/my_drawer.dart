@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:green_cartoon_animation_app/components/my_drawer_tile.dart';
 import 'package:green_cartoon_animation_app/pages/about_us_page.dart';
-import 'package:green_cartoon_animation_app/pages/animation_page.dart';
-import 'package:green_cartoon_animation_app/pages/project_page.dart';
 import 'package:green_cartoon_animation_app/pages/settings_page.dart';
 
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({super.key});
+  final Function(int) onItemSelected;
+  const MyDrawer({
+    super.key,
+    required this.onItemSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,10 @@ class MyDrawer extends StatelessWidget {
             MyDrawerTile(
               text: "H O M E" , 
               icon: Icons.home, 
-              onTap: () => Navigator.pop(context),
+              onTap: () {
+                Navigator.pop(context);
+                onItemSelected(0);
+              } 
             ),
 
             const SizedBox(height: 10,),
@@ -62,8 +66,9 @@ class MyDrawer extends StatelessWidget {
             MyDrawerTile(
               text: "A N I M A T I O N S", 
               icon: Icons.smart_display_outlined, 
-              onTap: () { Navigator.pop(context);
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => AnimationPage()));
+              onTap: () { 
+                Navigator.pop(context);
+                onItemSelected(1);
               }
 
             ),
@@ -74,8 +79,9 @@ class MyDrawer extends StatelessWidget {
             MyDrawerTile(
               text: "P R O J E C T S", 
               icon: Icons.work_outline_outlined, 
-              onTap: () { Navigator.pop(context);
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => ProjectPage()));
+              onTap: () { 
+                Navigator.pop(context);
+                onItemSelected(2);
               }
             ),
 
@@ -86,10 +92,9 @@ class MyDrawer extends StatelessWidget {
               text: "S E T T I N G S", 
               icon: Icons.settings, 
               onTap: (){
-                Navigator.pop(context); 
-                Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => SettingsPage()
-                  ));
+                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsPage()
+                ));
               }
               ),
 

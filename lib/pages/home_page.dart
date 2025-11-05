@@ -33,59 +33,62 @@ class _HomePageState extends State<HomePage> {
   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: MyAppBarActions(
-        iconImage: Image.asset(
-          "assets/gc_logo.png",
-          height: 46,
-          width: 46,          
-        ),
-
-        title: Text(
-          "Green Cartoon", 
-          style: TextStyle(
-            color: Color(0xff079b50),
-            fontFamily: "Quicksand-SemiBold",
-            fontSize: 20,
-            fontWeight: FontWeight.bold
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        appBar: MyAppBarActions(
+          iconImage: Image.asset(
+            "assets/gc_logo.png",
+            height: 46,
+            width: 46,          
+          ),
+      
+          title: Text(
+            "Green Cartoon", 
+            style: TextStyle(
+              color: Color(0xff079b50),
+              fontFamily: "Quicksand-SemiBold",
+              fontSize: 20,
+              fontWeight: FontWeight.bold
+              ),
             ),
-          ),
-          ),
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: _pages
-      ),
-      drawer: MyDrawer(
-        onItemSelected: _onItemTapped,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-      items: const <BottomNavigationBarItem> [
-    
-        // HOME
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: "Home",
+            ),
+        body: IndexedStack(
+          index: _selectedIndex,
+          children: _pages
         ),
-    
-        // ANIMATIONS
-        BottomNavigationBarItem(
-          icon: Icon(Icons.smart_display_outlined),
-          label: "Animations",
+        drawer: MyDrawer(
+          onItemSelected: _onItemTapped,
         ),
-    
-        // PROJECTS
-        BottomNavigationBarItem(
-          icon: Icon(Icons.work_outline_outlined),
-          label: "Projects"),
-    
-      ],
-      currentIndex: _selectedIndex,
-      selectedItemColor: Colors.green,
-      onTap: _onItemTapped,
-      elevation: 3,
-      )
-  ,
-
+        bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem> [
+      
+          // HOME
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+      
+          // ANIMATIONS
+          BottomNavigationBarItem(
+            icon: Icon(Icons.smart_display_outlined),
+            label: "Animations",
+          ),
+      
+          // PROJECTS
+          BottomNavigationBarItem(
+            icon: Icon(Icons.work_outline_outlined),
+            label: "Projects"),
+      
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.green,
+        onTap: _onItemTapped,
+        elevation: 3,
+        )
+        ,
+      
+      ),
     );
   }
 }
